@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 #{id}
+  dl.dl-horizontal
+    dt Description
+    dd= description
+    dt Type
+    dd= type
+    dt Sex
+    dd= sex
+    dt Naughty
+    dd= (naughty) ? 'definitely' : 'no'

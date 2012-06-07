@@ -1,0 +1,17 @@
+extends layout
+
+mixin formItem(name, label)
+  .control-group
+    label.control-label(for=name) #{label}
+    .controls
+      input(type='text', name=name, id=name)
+
+block content
+  h2 Add new animal
+  form.form-horizontal(method='POST')
+    mixin formItem('id', 'Name')
+    mixin formItem('description', 'Description')
+    mixin formItem('type', 'Type')
+    mixin formItem('sex', 'Sex')
+    mixin formItem('naughty', 'Naughty')
+    input.btn.btn-large.btn-primary(type='submit', value='Submit')

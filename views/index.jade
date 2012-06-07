@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1 hello #{locals.target}
+  a.btn.btn-primary.btn-large.pull-right(href='/add/animal') New Animal
+  h2 Registered animals
+  table.table.table-striped
+    thead
+      tr
+        th animal name
+        th type
+        th sex
+        th description
+        th naughty
+    tbody
+      - each animal in records
+        tr
+          td
+            a(href='/animal/'+ animal.id)= animal.id
+          td= animal.type
+          td= animal.sex
+          td= animal.description
+          td= animal.naughty
 
